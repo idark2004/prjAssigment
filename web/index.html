@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Welcome!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="CSS/viewStyle.css" rel="stylesheet" type="text/css"/>
+    </head>
+
+    <body>
+        <header>
+            <strong>From console to pc</strong></br>
+        </header>
+        <button onclick="JavaScript:window.location = 'login.jsp'">Log In</button>
+        <button onclick="JavaScript:window.location = 'signup.jsp'">Sign Up</button></br>
+        <button onclick="JavaScript:window.location = 'viewproduct.jsp'">Shopping without account</button>
+        <style>
+            body{
+                background-image: url("/img/background.png");
+                background-repeat: no-repeat;
+                background-size: cover;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            strong{
+                text-transform: uppercase; 
+                background-color: rgb(183, 214, 110);
+                font-size: 60;
+                padding: 10px;
+            }
+            header{
+                padding: 10%;
+            }
+            button:hover{
+
+                cursor: pointer;
+                background-color: aliceblue;
+            }
+            button{
+                margin: 10px;
+                padding: 10px;
+                color: chartreuse;
+                background-color: rgb(99, 67, 126);
+                text-transform: uppercase; 
+                font-weight: bold;
+            }
+        </style>
+    </body>
+
+</html>
