@@ -39,6 +39,7 @@
         </form>
         <c:if test="${requestScope.PRODUCT_LIST != null}">
             <table border="1" id="adminTable">
+                <caption>Product table</caption>
                 <thead>
                     <tr>
                         <th>No</th>
