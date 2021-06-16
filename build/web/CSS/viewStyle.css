@@ -12,6 +12,7 @@ body{
     position: fixed;
 }
 header{
+    background-color: white;
     padding: 10%;
 }
 .action,button:hover{       
