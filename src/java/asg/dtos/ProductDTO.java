@@ -17,6 +17,7 @@ public class ProductDTO {
     private String categoryID;
     private String status;
     private String sonarCloud1;
+    private String sonaCloud2;
     public ProductDTO() {
     }
 
