@@ -8,8 +8,6 @@ package asg.daos;
 import asg.dtos.UserDTO;
 import asg.utils.DBUtils;
 import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -46,7 +44,7 @@ public class UserDAO {
         }
     }
 
-    public UserDTO checkLogin(String userID, String password) throws SQLException {
+    public UserDTO checkLogin(String userID, String password) throws SQLException, ClassNotFoundException {
         UserDTO user = new UserDTO();
         Connection conn = null;
         PreparedStatement stm = null;
@@ -65,8 +63,8 @@ public class UserDAO {
                      user=new UserDTO(userID, name, "", roleID);
                 }
             }
-        } catch (Exception e) {
-        } finally {
+        } 
+        finally {
             if (rs != null) {
                 rs.close();
             }
