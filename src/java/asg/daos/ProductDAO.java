@@ -50,7 +50,7 @@ public class ProductDAO {
         }
     }
 
-    public List<ProductDTO> view(String status,String search, String categoryID) throws SQLException {
+    public List<ProductDTO> view(String status,String search, String categoryID) throws SQLException, ClassNotFoundException {
         List<ProductDTO> list = null;
         Connection conn = null;
         PreparedStatement stm = null;
@@ -79,8 +79,8 @@ public class ProductDAO {
                     list.add(new ProductDTO(productID, productName, productQuantity, productPrice, categoryID, status));
                 }
             }
-        } catch (Exception e) {
-        } finally {
+        } 
+        finally {
             if (rs != null) {
                 rs.close();
             }
@@ -94,7 +94,7 @@ public class ProductDAO {
         return list;
     }
 
-    public boolean delete(String productID) throws SQLException {
+    public boolean delete(String productID) throws SQLException, ClassNotFoundException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement stm = null;
@@ -105,10 +105,10 @@ public class ProductDAO {
                         + " WHERE productID = ?";
                 stm = conn.prepareStatement(sql);
                 stm.setString(1, productID);
-                check = stm.executeUpdate() > 0 ? true : false;
+                check = stm.executeUpdate() > 0;
             }
-        } catch (Exception e) {
-        } finally {
+        } 
+        finally {
             if (stm != null) {
                 stm.close();
             }
