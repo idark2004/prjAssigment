@@ -119,7 +119,7 @@ public class ProductDAO {
         return check;
     }
 
-    public boolean update(ProductDTO product) throws SQLException {
+    public boolean update(ProductDTO product) throws SQLException, ClassNotFoundException {
         boolean check = false;
         Connection conn = null;
         PreparedStatement stm = null;
@@ -135,10 +135,10 @@ public class ProductDAO {
                 stm.setString(4, product.getCategoryID());
                 stm.setBoolean(5, Boolean.parseBoolean(product.getStatus()));
                 stm.setString(6, product.getProductID());
-                check=stm.executeUpdate() >0 ? true : false;
+                check=stm.executeUpdate() >0;
             }
-        } catch (Exception e) {
-        } finally {
+        } 
+        finally {
             if (stm != null) {
                 stm.close();
             }
